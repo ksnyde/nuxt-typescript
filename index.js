@@ -57,11 +57,9 @@ module.exports = function NuxtTypeScript(moduleOptions) {
     const nuxtBabelOptions = {
       ...(nuxtBabelRule || {}).options,
       ...{
-        options: {
-          plugins: hadPluginsAlreadyDefined
-            ? nuxtBabelRule.options.plugins.push(nuxtBabelDynamicImportOption)
-            : [nuxtBabelDynamicImportOption]
-        }
+        plugins: hadPluginsAlreadyDefined
+          ? nuxtBabelRule.options.plugins.push(nuxtBabelDynamicImportOption)
+          : [nuxtBabelDynamicImportOption]
       }
     }
 
