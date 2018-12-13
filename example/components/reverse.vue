@@ -1,7 +1,7 @@
 <template>
   <div>
-    <input v-model="input"/>
-    <pre v-text="reversed"/>
+    <input v-model="input" />
+    <pre v-text="reversed" />
   </div>
 </template>
 

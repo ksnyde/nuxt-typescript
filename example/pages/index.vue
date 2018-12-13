@@ -1,17 +1,17 @@
 <template>
   <div>
-    <h1 v-text="title"/>
-    <v-ts-file/>
-    <v-tsx-file/>
-    <v-ts-lang/>
-    <v-tsx-lang/>
+    <h1 v-text="title" />
+    <v-ts-file />
+    <v-tsx-file />
+    <v-ts-lang />
+    <v-tsx-lang />
     <ul>
       <li><nuxt-link to="/file-ts">File with .ts extension</nuxt-link></li>
       <li><nuxt-link to="/file-tsx">File with .tsx extension</nuxt-link></li>
       <li><nuxt-link to="/lang-ts">Page with lang="ts"</nuxt-link></li>
       <li><nuxt-link to="/lang-tsx">Page with lang="tsx"</nuxt-link></li>
     </ul>
-    <v-reverse/>
+    <v-reverse />
   </div>
 </template>
 
