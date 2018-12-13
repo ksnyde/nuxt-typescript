@@ -30,19 +30,19 @@
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
-    "cache-loader": "^1.2.2",
-    "fork-ts-checker-webpack-plugin": "^0.4.2",
-    "thread-loader": "^1.1.5",
+    "cache-loader": "^1.2.5",
+    "fork-ts-checker-webpack-plugin": "^0.5.1",
+    "thread-loader": "^1.2.0",
     "ts-loader": "3.5.0",
-    "tslint": "^5.10.0",
-    "typescript": "^2.9.1",
-    "webpack": "3.12.0"
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2",
+    "webpack": "^4.27.1"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-supermind": "^0.48.0",
     "husky": "^0.14.3",
-    "prettier": "1.13.5"
+    "prettier": "1.15.5"
   }
 }
