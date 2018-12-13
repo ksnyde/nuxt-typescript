@@ -51,14 +51,17 @@ module.exports = function NuxtTypeScript(moduleOptions) {
     const nuxtVueRule = findRule(config, "vue-loader")
     const nuxtBabelRule = findRule(config, "babel-loader")
     const nuxtBabelDynamicImportOption = "@babel/plugin-syntax-dynamic-import"
+    const hadPluginsAlreadyDefined =
+      nuxtBabelRule && nuxtBabelRule.options && nuxtBabelRule.options.plugins
+
     const nuxtBabelOptions = {
       ...(nuxtBabelRule || {}).options,
       ...{
-        plugins: (nuxtBabelRule || {}).options.plugins
-          ? (nuxtBabelRule || {}).options.plugins.push(
-              nuxtBabelDynamicImportOption
-            )
-          : [nuxtBabelDynamicImportOption]
+        options: {
+          plugins: hadPluginsAlreadyDefined
+            ? nuxtBabelRule.options.plugins.push(nuxtBabelDynamicImportOption)
+            : [nuxtBabelDynamicImportOption]
+        }
       }
     }
 
