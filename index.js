@@ -50,7 +50,19 @@ module.exports = function NuxtTypeScript(moduleOptions) {
   this.extendBuild((config) => {
     const nuxtVueRule = findRule(config, "vue-loader")
     const nuxtBabelRule = findRule(config, "babel-loader")
-    const nuxtBabelOptions = (nuxtBabelRule || {}).options
+    const nuxtBabelDynamicImportOption = {
+      plugins: ["@babel/plugin-syntax-dynamic-import"]
+    }
+    const nuxtBabelOptions = {
+      ...(nuxtBabelRule || {}).options,
+      ...{
+        plugins: (nuxtBabelRule || {}).options.plugins
+          ? (nuxtBabelRule || {}).options.plugins.push(
+              nuxtBabelDynamicImportOption
+            )
+          : [nuxtBabelDynamicImportOption]
+      }
+    }
 
     // Babel loader factory
     const babelLoader = () => ({
